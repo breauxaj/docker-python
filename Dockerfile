@@ -1,6 +1,6 @@
-FROM python:3-alpine
+FROM breauxaj/alpine:latest
 
-RUN apk update && apk upgrade \
+RUN apk install python3 \
   && rm -rf /var/cache/apk/* \
   && mkdir -p /usr/src/app
 
