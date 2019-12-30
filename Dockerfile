@@ -2,11 +2,15 @@ FROM breauxaj/alpine:latest
 
 RUN apk add curl \
   python3 \
-  && rm -rf /var/cache/apk/* \
-  && mkdir -p /usr/src/app
+  && rm -rf /var/cache/apk/*
+
+RUN cd /usr/bin \
+  && ln -s python3.8 python
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
   && python get-pip.py
+
+RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
