@@ -1,8 +1,12 @@
 FROM breauxaj/alpine:latest
 
-RUN apk add python3 \
+RUN apk add curl \
+  python3 \
   && rm -rf /var/cache/apk/* \
   && mkdir -p /usr/src/app
+
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+  && python get-pip.py
 
 WORKDIR /usr/src/app
 
