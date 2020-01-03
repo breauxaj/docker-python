@@ -4,12 +4,12 @@ RUN apk add curl \
   python3 \
   && rm -rf /var/cache/apk/*
 
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+  && python get-pip.py
+
 RUN cd /usr/bin \
   && ln -s python3.8 python \
   && ln -s pip3 pip 
-
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
-  && python get-pip.py
 
 RUN mkdir -p /usr/src/app
 
