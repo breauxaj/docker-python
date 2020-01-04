@@ -8,8 +8,7 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
   && python3 get-pip.py
 
 RUN cd /usr/bin \
-  && ln -s python3.8 python \
-  && ln -s pip3 pip 
+  && ln -s python3.8 python
 
 RUN mkdir -p /usr/src/app
 
